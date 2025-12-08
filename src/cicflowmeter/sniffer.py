@@ -185,6 +185,7 @@ def process_directory(input_dir, output_dir, fields=None, verbose=False):
                 input_interface=None,
                 output_mode="csv",
                 output=str(output_file),
+                input_directory=None,
                 fields=fields,
                 verbose=verbose,
             )
@@ -293,12 +294,13 @@ def main():
         return
 
     sniffer, session = create_sniffer(
-        args.input_file,
-        args.input_interface,
-        args.output_mode,
-        args.output,
-        args.fields,
-        args.verbose,
+        input_file=args.input_file,
+        input_interface=args.input_interface,
+        output_mode=args.output_mode,
+        output=args.output,
+        input_directory=None,
+        fields=args.fields,
+        verbose=args.verbose,
     )
     sniffer.start()
 
